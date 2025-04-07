@@ -4,7 +4,7 @@
 const temperatureField = document.querySelector(".temp");
 const locationField = document.querySelector(".time_location p");
 const dateandTimeField = document.querySelector(".time_location span");
-const weatherField = document.querySelector(".condition p");
+const conditionField = document.querySelector(".condition p");
 const searchField = document.querySelector(".search_area");
 const form = document.querySelector('form');
 
@@ -32,15 +32,11 @@ const fetchResults = async (targetlocation)=>{
 function updateDetails(temp , locationName , time , condition){
 
 
-    let splitDate = time.split('')[0]
-
-    let splitTime = time.split('')[1]
-
-    let currentDay = getDayName(new Date(splitDate).getDay())
+    
 
     temperatureField.innerText = temp
     locationField.innerText = locationName
-    dateandTimeField.innerText = `${splitDate} ${currentDay} ${splitTime}`
+    dateandTimeField.innerText = time
     conditionField.innerText = condition
 
 }
